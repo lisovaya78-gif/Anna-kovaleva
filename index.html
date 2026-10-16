@@ -98,7 +98,7 @@ html{scroll-behavior:smooth;scroll-padding-top:86px}
 body{
   background:var(--paper);color:#37453C;
   font-family:var(--f-body);font-weight:400;font-size:16px;line-height:1.65;
-  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;overflow-x:clip;
   -webkit-tap-highlight-color:transparent;
   text-size-adjust:100%;-webkit-text-size-adjust:100%;
 }
@@ -540,6 +540,9 @@ body::after{
 
 /* ---------- планшет и телефон ---------- */
 @media(max-width:1020px){
+  /* хедер всегда прикреплён к верху экрана, с фоном с самого начала */
+  .hdr{-webkit-transform:translateZ(0);transform:translateZ(0)}
+  .hdr::before{opacity:1}
   .hero{grid-template-columns:1fr;gap:32px;min-height:0;
     padding:calc(var(--pad) + 80px) var(--pad) calc(var(--pad) + 12px)}
   .hero__stage{order:-1}

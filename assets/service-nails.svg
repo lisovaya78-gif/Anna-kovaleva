@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" width="500" height="400" role="img" aria-label="Маникюр и педикюр">
+<defs>
+  <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#2C5A45"/><stop offset="45%" stop-color="#8CC2A6"/><stop offset="100%" stop-color="#1E4231"/></linearGradient>
+  <radialGradient id="bgr" cx="38%" cy="30%" r="82%">
+    <stop offset="0%" stop-color="#FFFFFF"/><stop offset="55%" stop-color="#F2F8F4"/><stop offset="100%" stop-color="#DCEBE2"/></radialGradient>
+  <linearGradient id="lac" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#BE2A5A"/><stop offset="100%" stop-color="#7C1038"/></linearGradient>
+  <radialGradient id="pet" cx="50%" cy="86%" r="80%">
+    <stop offset="0%" stop-color="#D9527F"/><stop offset="100%" stop-color="#FBE3EC"/></radialGradient>
+  <radialGradient id="pet2" cx="50%" cy="86%" r="80%">
+    <stop offset="0%" stop-color="#F4C2D4"/><stop offset="100%" stop-color="#FFF6F9"/></radialGradient>
+</defs>
+<style>
+  .tw{transform-box:fill-box;transform-origin:center;opacity:.35;animation:t 4.4s ease-in-out infinite}
+  @keyframes t{0%,100%{opacity:.2;transform:scale(.8)}50%{opacity:.62;transform:scale(1.05)}}
+  .dr{animation:dr 5.5s ease-in-out infinite}
+  @keyframes dr{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+  @media(prefers-reduced-motion:reduce){.tw,.dr{animation:none;opacity:.5}}
+</style>
+
+<rect width="500" height="400" fill="url(#bgr)"/>
+
+<!-- пион слева -->
+<g transform="translate(112,236)">
+  <g fill="url(#pet2)" stroke="#2C5A45" stroke-width="1.1" stroke-opacity=".45">
+    <ellipse rx="86" ry="70"/>
+    <ellipse rx="70" ry="86" transform="rotate(32)"/>
+    <ellipse rx="76" ry="60" transform="rotate(68)"/>
+  </g>
+  <g fill="url(#pet)" stroke="#2C5A45" stroke-width="1" stroke-opacity=".5">
+    <ellipse rx="54" ry="44" transform="rotate(14)"/>
+    <ellipse rx="42" ry="52" transform="rotate(-28)"/>
+    <ellipse rx="30" ry="26" transform="rotate(50)"/>
+  </g>
+  <circle r="9" fill="#8CC2A6"/>
+  <g fill="#2C5A45" opacity=".85">
+    <circle cx="13" cy="0" r="2.4"/><circle cx="-13" cy="2" r="2.4"/><circle cx="3" cy="13" r="2.4"/>
+    <circle cx="-4" cy="-13" r="2.4"/><circle cx="10" cy="-9" r="2.2"/><circle cx="-11" cy="-8" r="2.2"/>
+  </g>
+</g>
+
+<!-- листья -->
+<path d="M40 300 C60 274,92 258,124 262 C102 288,70 302,40 300 Z" fill="#BFDCCB" stroke="#2C5A45" stroke-width="1" stroke-opacity=".4"/>
+<path d="M196 312 C182 288,184 258,200 238 C214 264,212 294,196 312 Z" fill="#D4E8DC" stroke="#2C5A45" stroke-width="1" stroke-opacity=".4"/>
+
+<!-- флакон лака -->
+<g transform="translate(332,196)">
+  <rect x="-52" y="-24" width="104" height="132" rx="18" fill="#FFF" fill-opacity=".62" stroke="url(#g)" stroke-width="2.4"/>
+  <path d="M-40 24 h80 v58 a16 16 0 0 1 -16 16 h-48 a16 16 0 0 1 -16 -16 Z" fill="url(#lac)" opacity=".9"/>
+  <rect x="-13" y="-46" width="26" height="24" rx="5" fill="#F0DCC3" stroke="url(#g)" stroke-width="2"/>
+  <rect x="-26" y="-104" width="52" height="60" rx="13" fill="url(#lac)" stroke="url(#g)" stroke-width="2.4"/>
+  <path d="M-14 -92 q6 -6 14 -5" stroke="#FFF" stroke-opacity=".55" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M-36 -12 q10 -9 22 -8" stroke="#FFF" stroke-opacity=".65" stroke-width="4" fill="none" stroke-linecap="round"/>
+</g>
+
+<!-- кисть с каплей -->
+<g transform="translate(258,120) rotate(-24)">
+  <rect x="-4" y="-58" width="8" height="70" rx="4" fill="url(#g)"/>
+  <path d="M-7 12 q7 26 7 34 q0 -8 7 -34 Z" fill="url(#lac)"/>
+</g>
+<g class="dr"><ellipse cx="243" cy="196" rx="7" ry="9" fill="url(#lac)" opacity=".9"/></g>
+
+<!-- искры -->
+<g fill="#FFF">
+  <path class="tw" d="M400 74 C401 79,404 82,409 83 C404 84,401 87,400 92 C399 87,396 84,391 83 C396 82,399 79,400 74 Z" style="animation-delay:.2s"/>
+  <path class="tw" d="M92 108 C93 114,97 118,103 119 C97 120,93 124,92 130 C91 124,87 120,81 119 C87 118,91 114,92 108 Z" style="animation-delay:1.5s"/>
+  <path class="tw" d="M436 274 C437 279,440 282,445 283 C440 284,437 287,436 292 C435 287,432 284,427 283 C432 282,435 279,436 274 Z" style="animation-delay:2.7s"/>
+  <path class="tw" d="M214 62 C215 66,217 68,221 69 C217 70,215 72,214 76 C213 72,211 70,207 69 C211 68,213 66,214 62 Z" style="animation-delay:3.6s"/>
+</g>
+<g fill="#8CC2A6" opacity=".7">
+  <circle cx="168" cy="88" r="3"/><circle cx="452" cy="150" r="2.6"/><circle cx="62" cy="180" r="2.4"/>
+  <circle cx="292" cy="330" r="3.2"/><circle cx="404" cy="352" r="2.4"/><circle cx="140" cy="352" r="2.6"/>
+</g>
+</svg>

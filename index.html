@@ -116,7 +116,6 @@ body::after{
 .eyebrow{display:inline-block;margin-bottom:16px;padding:8px 16px;border-radius:var(--r-sm);
   background:var(--tint);color:#114430;
   font-size:var(--t0);font-weight:800;letter-spacing:var(--tr-caps);text-transform:uppercase}
-.about__left .eyebrow,.cert__body .eyebrow,.book__left .eyebrow{align-self:flex-start}
 .display{font-weight:800;text-transform:uppercase;line-height:.92;letter-spacing:-.005em;color:var(--ink)}
 .script{font-weight:400;text-transform:none;letter-spacing:-.01em}
 .lede{font-size:var(--t3);line-height:1.7;color:#37453C;max-width:46ch}
@@ -245,10 +244,9 @@ body::after{
 
 .sec{padding:clamp(44px,5.5vw,72px) var(--pad)}
 /* браузер не тратит время на отрисовку того, что ещё не видно */
-.price,.cert,.about,.rev,.bk{content-visibility:auto}
+.price,.cert,.rev,.bk{content-visibility:auto}
 .price{contain-intrinsic-size:auto 900px}
 .cert{contain-intrinsic-size:auto 700px}
-.about{contain-intrinsic-size:auto 260px}
 .rev{contain-intrinsic-size:auto 600px}
 .bk{contain-intrinsic-size:auto 800px}
 .sec__head{display:flex;align-items:flex-end;justify-content:space-between;gap:32px;flex-wrap:wrap;margin-bottom:clamp(24px,3vw,40px)}
@@ -320,7 +318,7 @@ body::after{
   border:1px solid rgba(7,128,79,.35);pointer-events:none;z-index:3;
 }
 .cert__body{padding:clamp(24px,3vw,40px);position:relative;z-index:2;display:flex;flex-direction:column;gap:14px;justify-content:center}
-.cert__body .eyebrow{background:var(--tint);color:#114430}
+.cert__body .eyebrow{background:var(--tint);color:#114430;align-self:flex-start}
 .cert__t{font-size:var(--t4);line-height:1;letter-spacing:var(--tr-disp)}
 .cert__t .script{display:block;font-size:.42em;color:var(--accent);margin-top:12px}
 .cert__body p{font-size:var(--t2);line-height:1.7;max-width:40ch}
@@ -340,12 +338,6 @@ body::after{
 .sparkle{position:absolute;z-index:4;width:5px;height:5px;border-radius:50%;background:#fff;box-shadow:0 0 9px 3px rgba(255,255,255,.9);opacity:0;animation:spark 4.4s ease-in-out infinite}
 @keyframes spark{0%,100%{opacity:0;transform:scale(.4)}45%{opacity:.95;transform:scale(1)}}
 
-/* ============================================================ 5 · ПОДХОД */
-.about{display:block}
-.about__left{background:var(--panel);padding:clamp(28px,4vw,56px) var(--pad);display:grid;grid-template-columns:1fr auto;align-items:center;gap:12px clamp(20px,5vw,64px);position:relative;overflow:hidden}
-.about__left .eyebrow{background:rgba(255,255,255,.16);color:#FFFFFF;grid-column:1;justify-self:start;margin-bottom:0}
-.about__quote{grid-column:1;max-width:36ch;font-weight:400;font-size:var(--t4);line-height:1.3;letter-spacing:-.02em;color:var(--white)}
-.about__portrait{grid-column:2;grid-row:1/3;position:relative;aspect-ratio:1;width:140px;border:1px solid rgba(255,255,255,.4)}
 
 /* ============================================================ 6 · РАБОТЫ */
 .filters{display:flex;gap:8px;flex-wrap:wrap}
@@ -550,7 +542,6 @@ body::after{
   .hdr .btn{display:none}
   .burger{display:block;position:relative;z-index:3}
   .fab{display:flex}
-  .about__portrait{width:104px}
   .ftr{padding-bottom:96px}
 
   /* полноэкранное меню, 8 пунктов */
@@ -666,7 +657,6 @@ body::after{
   <a href="#top" class="mark"><b>Анна Ковалева</b><span>Косметология · Ногти · Лазер</span></a>
   <nav class="nav">
     <a href="#uslugi">Услуги</a>
-    <a href="#podhod">Подход</a>
     <a href="#price">Прайс</a>
     <a href="#raboty">Работы</a>
     <a href="#otzyvy">Отзывы</a>
@@ -761,15 +751,6 @@ body::after{
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
     </article>
-  </div>
-</section>
-
-<!-- 3 · ПОДХОД -->
-<section class="about" id="podhod">
-  <div class="about__left">
-    <span class="eyebrow rv">Как я работаю</span>
-    <p class="about__quote rv" style="--d:100ms">Хороший результат — это когда заметно тебя, а не процедуру.</p>
-    <div class="about__portrait slot rv" data-slot="portrait" data-cap="Анна Ковалева" style="--d:200ms"></div>
   </div>
 </section>
 

@@ -248,7 +248,7 @@ body::after{
 .price,.cert,.about,.rev,.bk{content-visibility:auto}
 .price{contain-intrinsic-size:auto 900px}
 .cert{contain-intrinsic-size:auto 700px}
-.about{contain-intrinsic-size:auto 900px}
+.about{contain-intrinsic-size:auto 260px}
 .rev{contain-intrinsic-size:auto 600px}
 .bk{contain-intrinsic-size:auto 800px}
 .sec__head{display:flex;align-items:flex-end;justify-content:space-between;gap:32px;flex-wrap:wrap;margin-bottom:clamp(24px,3vw,40px)}
@@ -341,18 +341,11 @@ body::after{
 @keyframes spark{0%,100%{opacity:0;transform:scale(.4)}45%{opacity:.95;transform:scale(1)}}
 
 /* ============================================================ 5 · ПОДХОД */
-.about{display:grid;grid-template-columns:5fr 7fr}
-.about__left{background:var(--panel);padding:clamp(28px,4vw,56px) var(--pad);display:flex;flex-direction:column;justify-content:space-between;gap:24px;position:relative;overflow:hidden}
-.about__left .eyebrow{background:rgba(255,255,255,.16);color:#FFFFFF}
-.about__quote{font-weight:400;font-size:var(--t4);line-height:1.3;letter-spacing:-.02em;color:var(--white)}
-.about__portrait{position:relative;aspect-ratio:1;max-width:150px;width:50%;border:1px solid rgba(255,255,255,.4)}
-.about__right{background:var(--paper);padding:clamp(28px,4vw,56px) var(--pad);display:flex;flex-direction:column;justify-content:center;gap:20px}
-.steps{list-style:none;display:flex;flex-direction:column}
-.steps li{display:grid;grid-template-columns:64px 1fr;gap:16px;padding:14px 0;border-top:1.5px solid var(--hair)}
-.steps li:last-child{border-bottom:1.5px solid var(--hair)}
-.steps .n{font-weight:800;font-size:var(--t4);color:var(--detail);line-height:1}
-.steps h4{font-size:var(--t2);font-weight:800;letter-spacing:.04em;margin-bottom:8px;color:var(--ink)}
-.steps p{font-size:var(--t1);line-height:1.6;max-width:52ch}
+.about{display:block}
+.about__left{background:var(--panel);padding:clamp(28px,4vw,56px) var(--pad);display:grid;grid-template-columns:1fr auto;align-items:center;gap:12px clamp(20px,5vw,64px);position:relative;overflow:hidden}
+.about__left .eyebrow{background:rgba(255,255,255,.16);color:#FFFFFF;grid-column:1;justify-self:start;margin-bottom:0}
+.about__quote{grid-column:1;max-width:36ch;font-weight:400;font-size:var(--t4);line-height:1.3;letter-spacing:-.02em;color:var(--white)}
+.about__portrait{grid-column:2;grid-row:1/3;position:relative;aspect-ratio:1;width:140px;border:1px solid rgba(255,255,255,.4)}
 
 /* ============================================================ 6 · РАБОТЫ */
 .filters{display:flex;gap:8px;flex-wrap:wrap}
@@ -538,7 +531,6 @@ body::after{
   .hero__media{width:auto;height:min(58vh,470px);max-width:100%}
   .hero__glow{width:150%;max-width:520px}
   .svc{grid-template-columns:1fr;gap:16px}
-  .about{grid-template-columns:1fr}
   .grid,.grid.is-f{display:flex;flex-wrap:nowrap;justify-content:flex-start;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;
     margin-inline:calc(-1 * var(--pad));padding:0 var(--pad) 10px;scroll-padding-inline:var(--pad);scrollbar-width:none}
   .grid::-webkit-scrollbar{display:none}
@@ -558,7 +550,7 @@ body::after{
   .hdr .btn{display:none}
   .burger{display:block;position:relative;z-index:3}
   .fab{display:flex}
-  .about__portrait{max-width:120px}
+  .about__portrait{width:104px}
   .ftr{padding-bottom:96px}
 
   /* полноэкранное меню, 8 пунктов */
@@ -590,7 +582,6 @@ body::after{
 
   .sec{padding:44px var(--pad)}
   .sec__head{margin-bottom:24px}
-  .steps li{grid-template-columns:48px 1fr;gap:12px;padding:16px 0}
 
   .bk__foot{flex-direction:column;align-items:stretch}
   .bk__foot .btn{width:100%;justify-content:center}
@@ -776,18 +767,9 @@ body::after{
 <!-- 3 · ПОДХОД -->
 <section class="about" id="podhod">
   <div class="about__left">
-    <span class="eyebrow rv">Как проходит визит</span>
+    <span class="eyebrow rv">Как я работаю</span>
     <p class="about__quote rv" style="--d:100ms">Хороший результат — это когда заметно тебя, а не процедуру.</p>
     <div class="about__portrait slot rv" data-slot="portrait" data-cap="Анна Ковалева" style="--d:200ms"></div>
-  </div>
-  <div class="about__right">
-    <h2 class="sec__title display rv">Четыре шага<br><span class="script">от вопроса к результату</span></h2>
-    <ol class="steps">
-      <li class="rv"><span class="n">/ 01</span><div><h4>Разбираемся</h4><p>Смотрю кожу или ногти, спрашиваю про уход и аллергии.</p></div></li>
-      <li class="rv" style="--d:90ms"><span class="n">/ 02</span><div><h4>Подбираю план</h4><p>Честно говорю, что нужно сейчас, а что можно отложить.</p></div></li>
-      <li class="rv" style="--d:180ms"><span class="n">/ 03</span><div><h4>Работаем</h4><p>Комментирую каждый шаг: стерильные инструменты, комфортный темп.</p></div></li>
-      <li class="rv" style="--d:270ms"><span class="n">/ 04</span><div><h4>Остаёмся на связи</h4><p>Памятка по уходу и ответы на вопросы между визитами.</p></div></li>
-    </ol>
   </div>
 </section>
 

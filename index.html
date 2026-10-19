@@ -144,8 +144,8 @@ body::after{
 .hdr.stuck{padding:12px var(--pad)}
 .hdr.stuck::before{opacity:1}
 .mark{display:flex;flex-direction:column;line-height:1}
-.mark b{font-weight:800;font-size:var(--t2);letter-spacing:.16em;text-transform:uppercase;color:var(--ink)}
-.mark span{margin-bottom:0;font-size:var(--t0);font-weight:800;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+.mark b{font-weight:800;font-size:clamp(18px,1.6vw,22px);letter-spacing:.14em;text-transform:uppercase;color:var(--ink)}
+.mark span{margin-bottom:0;font-size:clamp(10.5px,.9vw,12px);font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-top:4px}
 .nav{display:flex;gap:24px}
 .nav a{font-size:var(--t0);font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);position:relative;padding:4px 0}
 .nav a::after{content:'';position:absolute;left:0;bottom:0;width:100%;height:1.5px;background:var(--accent);transform:scaleX(0);transform-origin:right;transition:transform .45s var(--ease)}
@@ -198,7 +198,6 @@ body::after{
 .hero__line{display:block}
 .hero__line+.hero__line{margin-top:32px}   /* три части, разделённые воздухом */
 
-.hero__tag{margin-top:-8px;font-size:var(--t3);color:var(--accent)}
 .hero__cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:4px}
 .rule{height:1.5px;background:var(--foil);transform:scaleX(0);transform-origin:left}
 .rule.in{transform:scaleX(1);transition:transform 1.1s var(--ease)}
@@ -702,7 +701,6 @@ body::after{
       <span class="hero__line"><span class="fx-w" style="--fx-i:3">Косметолог</span></span>
       <span class="hero__line"><span class="fx-w" style="--fx-i:4">Лазерная</span> <span class="fx-w" style="--fx-i:5">эпиляция</span></span>
     </h1>
-    <p class="hero__tag script ld" style="--d:380ms">красота без лишнего</p>
     <p class="lede ld" style="--d:420ms">Веду приём одна и по записи: без очередей, чужих разговоров и спешки. Разбираем, что беспокоит, и работаем ровно с этим — без навязанных курсов и лишних процедур.</p>
     <div class="trust ld" style="--d:500ms">
       <span class="trust__stars">★★★★★</span><b>5,0</b>

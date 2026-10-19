@@ -187,7 +187,6 @@ body::after{
 .hero__panel{display:flex;flex-direction:column;gap:24px}
 .hero__top{display:flex;align-items:center;justify-content:space-between;gap:16px}
 .hero__top .eyebrow{margin-bottom:0}
-.hero__top .star{font-size:var(--t2);color:var(--detail)}
 /* ---- заголовок лежит на зелёном прямоугольнике ---- */
 .hero__name{
   background:var(--hero);color:#FFFFFF;
@@ -232,15 +231,6 @@ body::after{
 @keyframes fall{0%{transform:translate(0,-16%) rotate(0deg);opacity:0}12%{opacity:.75}88%{opacity:.4}
   100%{transform:translate(var(--dx),120%) rotate(var(--spin));opacity:0}}
 
-.ticker{border-top:1.5px solid var(--hair-2);border-bottom:1.5px solid var(--hair-2);background:var(--tint);
-  overflow:hidden;padding:16px 0;
-  -webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);
-          mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
-.ticker__track{display:flex;width:max-content;animation:slide 34s linear infinite}
-.ticker__track span{font-size:var(--t0);font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);padding:0 32px;display:flex;align-items:center;gap:32px;white-space:nowrap}
-.ticker__track span::after{content:'';width:5px;height:5px;background:var(--detail);border-radius:50%}
-@keyframes slide{to{transform:translateX(-50%)}}
-.ticker:hover .ticker__track,.ticker:focus-within .ticker__track{animation-play-state:paused}
 
 .sec{padding:clamp(44px,5.5vw,72px) var(--pad)}
 /* браузер не тратит время на отрисовку того, что ещё не видно */
@@ -357,7 +347,7 @@ body::after{
 .grid__empty{grid-column:1/-1;padding:48px 24px;font-size:var(--t1);color:var(--muted);border:1.5px dashed var(--hair-2)}
 .gal-more{margin-top:32px;text-align:center;font-size:var(--t0);font-weight:800;letter-spacing:var(--tr-caps);text-transform:uppercase;color:var(--muted)}
 .gal-more i{font-style:normal;color:var(--detail);margin:0 8px}
-.gal-more a{color:var(--ink);border-bottom:1.5px solid var(--hair-2);padding-bottom:2px;transition:border-color .4s var(--ease)}
+.gal-more a{display:inline-block;max-width:100%;overflow-wrap:anywhere;color:var(--ink);border-bottom:1.5px solid var(--hair-2);padding-bottom:2px;transition:border-color .4s var(--ease)}
 .gal-more a:hover{border-color:var(--ink)}
 
 /* ============================================================ 7 · БРОНИРОВАНИЕ */
@@ -401,11 +391,6 @@ body::after{
 @keyframes float{50%{transform:translate(-30px,34px) scale(1.12)}}
 
 /* ============================================================ 8 · КОНТАКТЫ */
-.trust{display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-size:var(--t1);color:var(--muted)}
-.trust__stars{color:var(--detail);letter-spacing:.1em;font-size:var(--t2)}
-.trust b{font-weight:800;font-size:var(--t4);color:var(--ink);line-height:1}
-.trust a{color:var(--ink);font-weight:800;border-bottom:1.5px solid var(--hair-2);padding-bottom:1px;transition:border-color .4s var(--ease)}
-.trust a:hover{border-color:var(--ink)}
 .bk__alt{margin-top:14px;font-size:var(--t1);color:rgba(239,237,232,.72)}
 .bk__alt a{color:var(--detail-lt);border-bottom:1.5px solid rgba(198,214,215,.45);padding-bottom:2px;transition:border-color .4s var(--ease)}
 .bk__alt a:hover{border-color:var(--detail-lt)}
@@ -431,6 +416,14 @@ body::after{
 .fpill:hover{background:var(--white);border-color:var(--white);color:var(--night)}
 .fpill:hover svg{color:var(--hero)}
 .ftr__bottom{margin-top:clamp(28px,4vw,44px);padding-top:18px;border-top:1px solid var(--hair-lt);display:flex;justify-content:space-between;gap:8px 24px;flex-wrap:wrap;font-size:12px}
+/* ---------- почему мне доверяют ---------- */
+.why{padding-top:0}
+.why__grid{max-width:1320px;margin:0 auto;display:grid;grid-template-columns:minmax(150px,230px) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center}
+.why__ph{aspect-ratio:4/5;border-radius:var(--r-md);border:1.5px solid var(--hair)}
+.why__row{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(16px,3vw,40px);margin-top:8px}
+.why__row li{padding-top:14px;border-top:3px solid var(--hero)}
+.why__row b{display:block;font-weight:800;font-size:var(--t0);letter-spacing:var(--tr-caps);text-transform:uppercase;color:var(--ink);margin-bottom:6px}
+.why__row span{font-size:var(--t1);line-height:1.5;color:var(--muted)}
 .fab{position:fixed;right:16px;bottom:16px;z-index:850;display:none;width:56px;height:56px;border-radius:50%;background:var(--accent);align-items:center;justify-content:center;box-shadow:0 8px 26px rgba(20,37,28,.34)}
 .fab svg{width:25px;height:25px;color:#fff}
 
@@ -522,6 +515,7 @@ body::after{
   .hero__stage{order:-1}
   .hero__media{width:auto;height:min(58vh,470px);max-width:100%}
   .hero__glow{width:150%;max-width:520px}
+  .hero{overflow-x:clip}
   .svc{grid-template-columns:1fr;gap:16px}
   .grid,.grid.is-f{display:flex;flex-wrap:nowrap;justify-content:flex-start;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;
     margin-inline:calc(-1 * var(--pad));padding:0 var(--pad) 10px;scroll-padding-inline:var(--pad);scrollbar-width:none}
@@ -531,6 +525,11 @@ body::after{
   .bk__inner{grid-template-columns:minmax(0,1fr)}
   .ftr__grid{grid-template-columns:1fr;gap:28px}
   .card__img{aspect-ratio:16/10}
+  .why__grid{grid-template-columns:96px minmax(0,1fr);gap:16px}
+  .why__ph{aspect-ratio:1}
+  .why__main{display:contents}
+  .why__main .eyebrow{grid-column:2;justify-self:start;margin-bottom:0}
+  .why__row{grid-column:1/-1}
   .rev__grid{grid-template-columns:1fr}
   .rev__badge{gap:16px}
   .rev__badge .btn{margin-left:0;width:100%;justify-content:center}
@@ -567,7 +566,6 @@ body::after{
   .hero__name{padding:28px 22px 32px}
   .hero__line+.hero__line{margin-top:16px}
   .hero__media::after{inset:8px;border-radius:var(--r-xs)}
-    .trust{gap:8px}
   .hero__cta{gap:8px}
   .hero__cta .btn{flex:1 1 100%;justify-content:center}
 
@@ -659,10 +657,7 @@ body::after{
     <a href="#uslugi">Услуги</a>
     <a href="#price">Прайс</a>
     <a href="#raboty">Работы</a>
-    <a href="#otzyvy">Отзывы</a>
-    <a href="#cert">Сертификат</a>
-    <a href="#zapis">Бронь</a>
-    <a href="#kontakty">Контакты</a>
+    <a href="#zapis">Бронирование</a>
   </nav>
   <a class="btn btn--wa" data-wa href="#">Записаться</a>
   <button class="burger" id="burger" aria-label="Меню"><i></i><i></i></button>
@@ -672,19 +667,15 @@ body::after{
 <section class="hero" id="top">
   <div class="hero__panel">
     <div class="hero__top ld" style="--d:100ms">
-      <span class="eyebrow">Бат-Ям · ул. ХаТхия, 1</span><span class="star">✦</span>
+      <span class="eyebrow">Бат-Ям · ул. ХаТхия, 1</span>
     </div>
     <div class="rule" id="r1"></div>
     <h1 class="hero__name display fx-words ld" style="--d:280ms">
-      <span class="hero__line"><span class="fx-w" style="--fx-i:0">Мастер</span> <span class="fx-w" style="--fx-i:1">ногтевого</span> <span class="fx-w" style="--fx-i:2">сервиса</span></span>
-      <span class="hero__line"><span class="fx-w" style="--fx-i:3">Косметолог</span></span>
-      <span class="hero__line"><span class="fx-w" style="--fx-i:4">Лазерная</span> <span class="fx-w" style="--fx-i:5">эпиляция</span></span>
+      <span class="hero__line"><span class="fx-w" style="--fx-i:0">Косметология</span></span>
+      <span class="hero__line"><span class="fx-w" style="--fx-i:1">Ногти</span></span>
+      <span class="hero__line"><span class="fx-w" style="--fx-i:2">Лазерная</span> <span class="fx-w" style="--fx-i:3">эпиляция</span></span>
     </h1>
     <p class="lede ld" style="--d:420ms">Веду приём одна и по записи: без очередей, чужих разговоров и спешки. Разбираем, что беспокоит, и работаем ровно с этим — без навязанных курсов и лишних процедур.</p>
-    <div class="trust ld" style="--d:500ms">
-      <span class="trust__stars">★★★★★</span><b>5,0</b>
-      <span>14 отзывов на <a data-map href="#">Google Картах</a></span>
-    </div>
     <div class="hero__cta ld" style="--d:570ms">
       <a class="btn btn--wa fx-beam" href="#zapis">Забронировать время
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -700,7 +691,6 @@ body::after{
   </div>
 </section>
 
-<div class="ticker"><div class="ticker__track" id="tick"></div></div>
 
 <!-- 2 · УСЛУГИ -->
 <section class="sec" id="uslugi">
@@ -709,11 +699,11 @@ body::after{
       <span class="eyebrow rv">Что я делаю</span>
       <h2 class="sec__title display rv" style="--d:80ms">Услуги <span class="script">и что в них входит</span></h2>
     </div>
-    <p class="lede rv" style="--d:160ms">Три направления в одном кабинете — можно совместить лицо, руки и эпиляцию за один визит.</p>
+    <p class="lede rv" style="--d:160ms">Можно совместить лицо, руки и эпиляцию за один визит.</p>
   </div>
   <div class="svc">
     <article class="card fx-spot fx-tilt rv">
-      <div class="card__img slot fx-glare" data-slot="svc1" data-cap="Аппаратная процедура по лицу"><span class="card__no">/ 01</span></div>
+      <div class="card__img slot fx-glare" data-slot="svc1" data-cap="Аппаратная процедура по лицу"><span class="card__no">01</span></div>
       <div class="card__body">
         <h3>Косметология лица</h3>
         <ul>
@@ -726,7 +716,7 @@ body::after{
       </div>
     </article>
     <article class="card fx-spot fx-tilt rv" style="--d:110ms">
-      <div class="card__img slot fx-glare" data-slot="svc2" data-cap="Ногти"><span class="card__no">/ 02</span></div>
+      <div class="card__img slot fx-glare" data-slot="svc2" data-cap="Ногти"><span class="card__no">02</span></div>
       <div class="card__body">
         <h3>Ногти</h3>
         <ul>
@@ -739,7 +729,7 @@ body::after{
       </div>
     </article>
     <article class="card fx-spot fx-tilt rv" style="--d:220ms">
-      <div class="card__img slot fx-glare" data-slot="svc3" data-cap="Лазерная процедура, аппарат INMODE"><span class="card__no">/ 03</span></div>
+      <div class="card__img slot fx-glare" data-slot="svc3" data-cap="Лазерная процедура, аппарат INMODE"><span class="card__no">03</span></div>
       <div class="card__body">
         <h3>Лазерная эпиляция</h3>
         <ul>
@@ -751,6 +741,22 @@ body::after{
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
     </article>
+  </div>
+</section>
+
+<!-- ПОЧЕМУ МНЕ ДОВЕРЯЮТ -->
+<section class="sec why">
+  <div class="why__grid">
+    <div class="why__ph slot rv" data-slot="portrait" data-cap="Анна Ковалева"></div>
+    <div class="why__main">
+      <span class="eyebrow rv">Почему мне доверяют</span>
+      <ul class="why__row">
+        <li class="rv"><b>Индивидуальный подход</b><span>Приём один на один, без шаблонов.</span></li>
+        <li class="rv" style="--d:70ms"><b>Естественный результат</b><span>Заметно вас, а не процедуру.</span></li>
+        <li class="rv" style="--d:140ms"><b>Честные рекомендации</b><span>Скажу прямо, что нужно, а что можно отложить.</span></li>
+        <li class="rv" style="--d:210ms"><b>Стерильность</b><span>Одноразовые материалы, крафт-пакеты.</span></li>
+      </ul>
+    </div>
   </div>
 </section>
 
@@ -852,18 +858,18 @@ body::after{
     <div class="bk__intro">
     <span class="eyebrow rv">Бронирование</span>
     <h2 class="bk__title display rv" style="--d:80ms">Забронировать время<span class="script">за три касания</span></h2>
-    <p class="bk__lede rv" style="--d:160ms">Выбери услугу, день и удобное окно — я соберу заявку и открою WhatsApp с готовым сообщением. Останется нажать «отправить».</p>
+    <p class="bk__lede rv" style="--d:160ms">Выберите услугу, день и удобное окно — я соберу заявку и открою WhatsApp с готовым сообщением. Останется нажать «отправить».</p>
     </div>
     <div class="bk__box rv" style="--d:240ms">
-      <div class="bk__step"><span class="bk__lab"><em>/ 01</em>Услуга</span><div class="chips" id="bkSrv"></div></div>
-      <div class="bk__step"><span class="bk__lab"><em>/ 02</em>День</span><div class="days" id="bkDay"></div></div>
-      <div class="bk__step"><span class="bk__lab"><em>/ 03</em>Время</span><div class="times" id="bkTime"><span class="times--empty">Сначала выбери день</span></div></div>
+      <div class="bk__step"><span class="bk__lab"><em>01</em>Услуга</span><div class="chips" id="bkSrv"></div></div>
+      <div class="bk__step"><span class="bk__lab"><em>02</em>День</span><div class="days" id="bkDay"></div></div>
+      <div class="bk__step"><span class="bk__lab"><em>03</em>Время</span><div class="times" id="bkTime"><span class="times--empty">Сначала выберите день</span></div></div>
       <div class="bk__foot">
-        <p class="bk__sum" id="bkSum">Заполни три шага выше</p>
+        <p class="bk__sum" id="bkSum">Заполните три шага выше</p>
         <a class="btn btn--wa" id="bkGo" href="#" disabled>Отправить в WhatsApp
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
-      <p class="bk__alt">Не хочешь выбирать сейчас — <a data-wa href="#">просто напиши в WhatsApp</a></p>
+      <p class="bk__alt">Не хотите выбирать сейчас — <a data-wa href="#">просто напишите в WhatsApp</a></p>
       <p class="bk__note">Это заявка, а не подтверждённая запись: Анна согласует точное время в переписке. Суббота — выходной, в остальные дни приём с 8:00 до 20:00.</p>
     </div>
   </div>
@@ -986,7 +992,6 @@ const PHOTOS = {
   w7: "assets/work-device.jpg", w8: "assets/work-lamp.jpg"
 };
 
-const TICKER = ["Приём по записи","Стерильные инструменты","Одноразовые расходники","Оплата Bit","Косметика GIGI","Подарочные сертификаты"];
 
 /* ============================================================ СБОРКА */
 const waLink = t => "https://wa.me/" + PHONE + "?text=" + encodeURIComponent(t);
@@ -1014,7 +1019,6 @@ document.querySelectorAll("[data-slot]").forEach(el=>{
   el.prepend(img);
 });
 
-document.getElementById("tick").innerHTML = TICKER.concat(TICKER).map(t=>"<span>"+t+"</span>").join("");
 
 const hdr = document.getElementById("hdr");
 addEventListener("scroll", ()=> hdr.classList.toggle("stuck", scrollY > 60), {passive:true});
